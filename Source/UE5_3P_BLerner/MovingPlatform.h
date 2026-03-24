@@ -18,11 +18,25 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	int dirMove = 1;
+	UPROPERTY(EditAnywhere)
+	float movSpeed = 1;
 
-};
+	UPROPERTY(EditAnywhere)
+	FVector VectorDirection = FVector(1, 1, 1); 
+
+	UPROPERTY(EditAnywhere) 
+	FVector PosLimit1 = FVector(0, 0, 0); 
+
+	UPROPERTY(EditAnywhere) 
+	FVector PosLimit2 = FVector(0, 0, 0); 	
+
+
+	int dirMoveX = 1;
+	int dirMoveY = 1;
+	int dirMoveZ = 1; 
+	};
