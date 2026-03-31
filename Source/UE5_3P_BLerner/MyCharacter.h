@@ -11,6 +11,8 @@ class UE5_3P_BLERNER_API AMyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+	FVector initialPosition; 
+
 public:
 	// Sets default values for this character's properties
 	AMyCharacter();

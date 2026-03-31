@@ -15,6 +15,8 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	initialPosition = GetActorLocation(); 
 	
 }
 
@@ -22,6 +24,13 @@ void AMyCharacter::BeginPlay()
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	FVector currentPosition = GetActorLocation();
+
+	if (currentPosition.Y < -500)
+	{
+		SetActorLocation(initialPosition);
+	}
 
 }
 
@@ -38,5 +47,6 @@ void AMyCharacter::SpawnActor()
 	spawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn; 
 
 	GetWorld()->SpawnActor<AActor>(actorBPToSpawn, GetActorTransform(), spawnParams);
+	
 }
 
