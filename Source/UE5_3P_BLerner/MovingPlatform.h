@@ -13,7 +13,7 @@ class UE5_3P_BLERNER_API AMovingPlatform : public AActor
 	
 public:	
 	// Sets default values for this actor's properties
-	AMovingPlatform();
+	AMovingPlatform();	
 
 protected:
 	// Called when the game starts or when spawned
